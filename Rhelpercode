@@ -1,0 +1,5 @@
+##check for presence of NA values
+
+  extra_df %>% 
+  select_if(function(x) any(is.na(x))) %>% 
+  summarise_each(funs(sum(is.na(.)))) -> extra_NA
